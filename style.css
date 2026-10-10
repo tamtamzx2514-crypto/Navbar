@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial,sans-serif;
+    min-height: 100vh;
+    background: url(images/Mountain.jpg) no-repeat center center/cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    box-shadow: 0 10 20 rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    z-index: 999;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600px;
+}
+
+.navbar-logo {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(2, 56, 95);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.navbar-container .navbar-menu {
+    display: flex;
+    text-align: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.navbar-container .navbar-menu li a {
+    text-decoration: none;
+    color: rgb(0, 39, 66);
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    white-space: nowrap;
+    border-radius: 15px;
+}
+
+.navbar-container .navbar-menu li a:hover {
+    color: rgb(0, 0, 0);
+    background: rgba(188, 212, 229, 0.8);
+    border: 2px solid #000000;
+}
+
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #0c0c0c;
+    transition: 0.3s;
+}
+
+@media (max-width: 880px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .navbar-container .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem ;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgb(253, 252, 252);
+        background: #fff;
+    }
+
+    .navbar-container .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+}
+
+@media (max-width:480px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+    .navbar-logo {
+        font-size: 1.7rem;
+    }
+    .navbar-container .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+}
